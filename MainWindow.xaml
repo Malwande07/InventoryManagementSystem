@@ -1,0 +1,119 @@
+﻿<Window x:Class="InventoryManagementSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryManagementSystem"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <!-- Add Product Tab -->
+            <TabItem Header="Add Product">
+                <StackPanel Margin="10">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Product ID:" Width="100"/>
+                        <TextBox x:Name="txtProductID" Width="200"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Name:" Width="100"/>
+                        <TextBox x:Name="txtName" Width="200"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Category:" Width="100"/>
+                        <TextBox x:Name="txtCategory" Width="200"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Price:" Width="100"/>
+                        <TextBox x:Name="txtPrice" Width="200"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Stock Quantity:" Width="100"/>
+                        <TextBox x:Name="txtStockQuantity" Width="200"/>
+                    </StackPanel>
+
+                    <!-- Additional fields for specific categories -->
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Warranty Period (Years):" Width="200"/>
+                        <TextBox x:Name="txtWarrantyPeriod" Width="200" TextChanged="txtWarrantyPeriod_TextChanged"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Expiration Date:" Width="100"/>
+                        <TextBox x:Name="txtExpirationDate" Width="200"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Size:" Width="100"/>
+                        <TextBox x:Name="txtSize" Width="200"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Material:" Width="100"/>
+                        <TextBox x:Name="txtMaterial" Width="200"/>
+                    </StackPanel>
+
+                    <Button Content="Add Product" Click="AddProduct_Click"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Update Product Tab -->
+            <TabItem Header="Update Product">
+                <StackPanel Margin="10">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Enter Product ID to Search:" Width="200"/>
+                        <TextBox x:Name="txtSearchProductID" Width="200"/>
+                    </StackPanel>
+
+                    <Button Content="Search Product" Click="SearchProduct_Click"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Name:" Width="100"/>
+                        <TextBox x:Name="txtUpdateName" Width="200"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Price:" Width="100"/>
+                        <TextBox x:Name="txtUpdatePrice" Width="200"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Stock Quantity:" Width="100"/>
+                        <TextBox x:Name="txtUpdateStockQuantity" Width="200"/>
+                    </StackPanel>
+
+                    <Button Content="Update Product" Click="UpdateProduct_Click"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Inventory Report Tab -->
+            <TabItem Header="Inventory Report">
+                <StackPanel Margin="10">
+                    <Button Content="Generate Report" Click="GenerateReport_Click"/>
+                    <DataGrid x:Name="dataGridReport" AutoGenerateColumns="True"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Process Sale Tab -->
+            <TabItem Header="Process Sale">
+                <StackPanel Margin="10">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Product ID:" Width="100"/>
+                        <TextBox x:Name="txtSaleProductID" Width="200"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Quantity:" Width="100"/>
+                        <TextBox x:Name="txtSaleQuantity" Width="200"/>
+                    </StackPanel>
+
+                    <Button Content="Process Sale" Click="ProcessSale_Click"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
